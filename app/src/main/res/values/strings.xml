@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name" translatable="false">OPC UA Client</string>
+    <string name="InserisciURI">Enter OPC UA Address</string>
+    <string name="Connetti">Connect</string>
+    <string name="DiscoveryEndpoints" translatable="false">Discovery Endpoints</string>
+    <string name="insertaddress">Enter OPC UA Server Address</string>
+    <string name="protocolloopctcp">Endpoints list</string>
+    <string name="exindirizzo">Ex. 192.168.1.3:51210</string>
+    <string name="browser" translatable="false">Browser</string>
+    <string name="elencosottoscrizioni">Subscription List</string>
+    <string name="monitoraggiosessione">Session Monitoring</string>
+    <string name="monitoreditem" translatable="false">Monitored Item</string>
+    <string name="operazionelettura">Read Operation</string>
+    <string name="inseriscidatilettura">Enter reading data</string>
+    <string name="elencoletture">Readings list</string>
+    <string name="elencosessioniattive">Active sessions list</string>
+    <string name="infosessione">Session information</string>
+    <string name="read" translatable="false">Read</string>
+    <string name="write" translatable="false">Write</string>
+    <string name="browse" translatable="false">Browse</string>
+    <string name="subscribe" translatable="false">Subscribe</string>
+    <string name="monitoraggio" translatable="false">Monitoring</string>
+    <string name="infosottoscrizione">Subscription information</string>
+    <string name="creamonitem">Create Monitored Item</string>
+    <string name="inserisciparamsotto">Enter Monitored Item parameters</string>
+    <string name="namespace" translatable="false">Namespace</string>
+    <string name="nodeindex" translatable="false">Node Index</string>
+    <string name="samplinginterlval" translatable="false">Sampling Interval</string>
+    <string name="QueueSize" translatable="false">Queue Size</string>
+    <string name="DiscardOldest" translatable="false">Discard Oldest</string>
+    <string name="Filtrosullaletturadati" translatable="false">Filter</string>
+    <string name="FiltroAssoluto" translatable="false">Absolute filter</string>
+    <string name="FiltroPercentuale" translatable="false">Percentage filter</string>
+    <string name="Deadband" translatable="false">Deadband</string>
+    <string name="TipodiTimestamp" translatable="false">Timestamp Type</string>
+    <string name="InseriscidatiNodo">Enter node data</string>
+    <string name="maxage" translatable="false">MaxAge</string>
+    <string name="Timestamp" translatable="false">Timestamp</string>
+    <string name="Server" translatable="false">Server</string>
+    <string name="Source" translatable="false">Source</string>
+    <string name="Both" translatable="false">Both</string>
+    <string name="Neither" translatable="false">Neither</string>
+    <string name="Value" translatable="false">Value</string>
+    <string name="InserisciparametriSottoscrizione">Enter Subscription parameters</string>
+    <string name="PublishingInterval" translatable="false">Publishing Interval</string>
+    <string name="RequestedPublishInterval" translatable="false">Requested Publish Interval</string>
+    <string name="MaxKeepAliveCount" translatable="false">Max Keep Alive Count</string>
+    <string name="RequestedMaxKeepAliveCount" translatable="false">Requested Max Keep Alive Count</string>
+    <string name="LifetimeCount" translatable="false">Lifetime Count</string>
+    <string name="RequestedLifetimeCount" translatable="false">Requested Lifetime Count</string>
+    <string name="MaxNotificationperPublish" translatable="false">Max Notification per Publish</string>
+    <string name="Priority" translatable="false">Priority</string>
+    <string name="PublishingEnable" translatable="false">Publishing Enable</string>
+    <string name="CreaSottoscrizione">Create Subscription</string>
+    <string name="CertificatoNonCreato">The security certificate could not be created</string>
+    <string name="CertificatoNonSalvato">The security certificate could not be saved</string>
+    <string name="IndirizzoNonValido">Invalid address</string>
+    <string name="TentativoDiConnessione">Connection attempt</string>
+    <string name="RichiestaEndpoints">Request endpoints to the server</string>
+    <string name="EndpointsNontrovati">Endpoints not found</string>
+    <string name="ServerDown">Request timeout</string>
+    <string name="VuoiCollegartiAllEndpoint">Do you want to connect to this endpoint?</string>
+    <string name="CreazioneSessione">Session creation</string>
+    <string name="SessioneNonCreata">The session could not be created\n</string>
+    <string name="Errore">Error</string>
+    <string name="RichiestaBrowse">Browse request to the server</string>
+    <string name="BrowseFallita">Error while browsing\n</string>
+    <string name="NonCiSonoNodi">There are no other nodes</string>
+    <string name="ErroreLetturaSessione">Session reading error</string>
+    <string name="AggiornamentoAttivo">User interface update on</string>
+    <string name="AggiornamentoInPausa">User interface update off</string>
+    <string name="InserisciValoriValidi">Enter valid values</string>
+    <string name="LetturaInCorso">Reading in progress...</string>
+    <string name="LetturaFallita">Reading not performed\n</string>
+    <string name="CreazioneSottoscrizione">Subscription creation</string>
+    <string name="SottoscrizioneFallita">The subscription could not be created\n</string>
+    <string name="DeviRispettareVincolo">You must respect the constraint:</string>
+    <string name="WriteInCorso">Write operation in progress...</string>
+    <string name="WriteFallita">Write operation failed\n</string>
+    <string name="ValoriInviati">Values sent</string>
+    <string name="ChiudiSessione">Close Session</string>
+    <string name="EliminandoLaSessione">By canceling the session all connected subscriptions will be deleted. Do you want to end this session?</string>
+    <string name="ErroreLetturaSottoscrizione">Subscription reading error</string>
+    <string name="ParametriRestituiti">Parameters returned by the server</string>
+    <string name="CreazioneMonItemInCorso">Monitored Item creation in progress</string>
+    <string name="ErroreSconosciuto">Unknown error\n</string>
+    <string name="ErroreToast">Error:&#160;</string>
+    <string name="ChiudiSottoscrizione">Close Subscription</string>
+    <string name="ChiudendoSottoscrizione">Do you want to close this subscription?</string>
+    <string name="CencellazioneSottoscrizioneInCorso">Subscription cancellation in progress</string>
+    <string name="EliminationeSottoscrizioneFallita">The subscription could not be deleted\n</string>
+    <string name="Ultime">"Last "</string>
+    <string name="letture">&#160;readings</string>
+    <string name="chiudi">Close</string>
+    <string name="ActiveSessions">ActiveSessions</string>
+    <string name="avviaaggiornamento">Enable user interface update</string>
+    <string name="pausaaggiornamento">Stop user interface update</string>
+    <string name="sottoscrizioni_attive">Active subscriptions</string>
+    <string name="termina_sessione">Close session</string>
+    <string name="elimina_sottoscrizione">Delete subscription</string>
+    <string name="info">Information</string>
+    <string name="infoMessage">This demo version was developed to show the potential of the OPC UA standard. Today, this standard is relevant because it has been included in the main reference models of industrial architecture such as RAMI 4.0 and IIoT.\n\nDeveloped by two students of the University of Catania (Italy) for the course of Industrial Informatics.\n\nFor whatever information it is possible to contact the developers to the followings addresses:\ntwistedfatedeveloper@gmail.com\ntwistedappdeveloper@gmail.com</string>
+    <string name="nonsupportato">Not Supported</string>
+    <string name="protocollononsupportato">The only transport protocol that can be used at the moment with this application is the tcp protocol.\nChoose a opc.tcp endpoint</string>
+    <string name="sottoscrizioniscadute">Some subscriptions have expired</string>
+    <string name="sottoscrizionescaduta">The subscription has expired</string>
+    <string name="sessionid" translatable="false">SessionID</string>
+
+
+    <string-array name="timestamps">
+        <item>Both</item>
+        <item>Server</item>
+        <item>Source</item>
+        <item>Neither</item>
+    </string-array>
+    <string-array name="WriteType">
+        <item>Double</item>
+        <item>String</item>
+        <item>Boolean</item>
+    </string-array>
+</resources>

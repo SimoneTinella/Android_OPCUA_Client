@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="InserisciURI">Inserisci l\'indirizzo del Server OPC UA</string>
+    <string name="Connetti">Connetti</string>
+    <string name="insertaddress">Inserisci l\'indirizzo del Server OPC UA</string>
+    <string name="protocolloopctcp">Elenco degli endpoint</string>
+    <string name="exindirizzo">Es. 192.168.1.3:51210</string>
+    <string name="elencosottoscrizioni">Elenco sottoscrizioni</string>
+    <string name="monitoraggiosessione">Monitoraggio Sessione</string>
+    <string name="operazionelettura">Operazione di lettura</string>
+    <string name="inseriscidatilettura">Inserisci i dati lettura</string>
+    <string name="elencoletture">Elenco letture</string>
+    <string name="elencosessioniattive">Elenco sessioni attive</string>
+    <string name="infosessione">Informazioni sulla sessione</string>
+    <string name="infosottoscrizione">Informazioni sottoscrizione</string>
+    <string name="creamonitem">Crea monitored item</string>
+    <string name="inserisciparamsotto">Inserisci i parametri del Monitored Item</string>
+    <string name="InseriscidatiNodo">Inserisci i dati del nodo</string>
+    <string name="InserisciparametriSottoscrizione">Inserisci i parametri della sottoscrizione</string>
+    <string name="CreaSottoscrizione">Crea sottoscrizione</string>
+    <string name="CertificatoNonCreato">Il certificato di sicurezza non può essere creato</string>
+    <string name="CertificatoNonSalvato">Il certificato di sicurezza non può essere salvato</string>
+    <string name="IndirizzoNonValido">L\'indirizzo non è valido</string>
+    <string name="TentativoDiConnessione">Tentativo di connessione</string>
+    <string name="RichiestaEndpoints">Richiesta Endpoints al server</string>
+    <string name="EndpointsNontrovati">Non sono stati trovati Endpoints</string>
+    <string name="ServerDown">Richiesta scaduta</string>
+    <string name="VuoiCollegartiAllEndpoint">Vuoi collegarti a questo Endpoint?</string>
+    <string name="CreazioneSessione">Creazione sessione in corso...</string>
+    <string name="SessioneNonCreata">La sessione non può essere creata\n</string>
+    <string name="Errore">Errore</string>
+    <string name="RichiestaBrowse">Richiesta di Browse al server</string>
+    <string name="BrowseFallita">Errore durante l\'esecuzione della Browse\n</string>
+    <string name="NonCiSonoNodi">Non ci sono altri nodi</string>
+    <string name="ErroreLetturaSessione">Errore lettura della sessione</string>
+    <string name="AggiornamentoAttivo">Aggiornamento interfaccia utente ON</string>
+    <string name="AggiornamentoInPausa">Aggiornamento interfaccia utente OFF</string>
+    <string name="InserisciValoriValidi">Inserisci dei valori validi</string>
+    <string name="LetturaInCorso">Lettura in corso...</string>
+    <string name="LetturaFallita">Non è stato possibile eseguire l\'operazione di lettura\n</string>
+    <string name="CreazioneSottoscrizione">Creazione della sottoscrizione</string>
+    <string name="SottoscrizioneFallita">La sottoscrizione non può essere creata\n</string>
+    <string name="DeviRispettareVincolo">Devi rispettare il vincolo:</string>
+    <string name="WriteInCorso">Scrittura in corso...</string>
+    <string name="WriteFallita">Scrittura fallita\n</string>
+    <string name="ValoriInviati">Valori inviati</string>
+    <string name="EliminandoLaSessione">Cancellando la sessione tutte le sottoscrizioni ad essa legate verrano eliminate. Sei sicuro di voler eliminare questa sessione?</string>
+    <string name="ErroreLetturaSottoscrizione">Errore lettura sottoscrizione</string>
+    <string name="ParametriRestituiti">Parametri restituiti dal server</string>
+    <string name="CreazioneMonItemInCorso">Creazione Monitored Item in corso...</string>
+    <string name="ErroreSconosciuto">Errore sconosciuto\n</string>
+    <string name="ErroreToast">"Errore: "</string>
+    <string name="ChiudiSottoscrizione">Chiudi sottoscrizione</string>
+    <string name="ChiudendoSottoscrizione">Vuoi chiudere questa sottoscrizione?</string>
+    <string name="CencellazioneSottoscrizioneInCorso">Chiusura sottoscrizione in corso...</string>
+    <string name="EliminationeSottoscrizioneFallita">Non è stato possibile eliminare la sottoscrizione \n</string>
+    <string name="Ultime">"Ultime "</string>
+    <string name="letture">" letture"</string>
+    <string name="chiudi">Chiudi</string>
+    <string name="ActiveSessions">Sessioni attive</string>
+    <string name="avviaaggiornamento">Avvia aggiornamento interfaccia utente</string>
+    <string name="pausaaggiornamento">Ferma aggiornamento interfaccia utente</string>
+    <string name="sottoscrizioni_attive">Sottoscrizioni attive</string>
+    <string name="termina_sessione">Chiudi sessione</string>
+    <string name="elimina_sottoscrizione">Elimina sottoscrizione</string>
+    <string name="info">Informazioni</string>
+    <string name="nonsupportato">Non supportato</string>
+    <string name="sottoscrizioniscadute">Alcune sottoscrizioni sono scadute</string>
+    <string name="sottoscrizionescaduta">La sottoscrizione è scaduta</string>
+    <string name="protocollononsupportato">L\'unico protocollo di trasporto supportato in questo momento è il TCP.\nScegli degli endpoint opc.tcp</string>
+    <string name="infoMessage">Questa applicazione in versione demo è stata sviluppata per mostrare le potenzialità dello standard OPC UA. Si tratta di uno standard di rilievo in quanto è stato incluso nei principali modelli di riferimento architetturali industriali come RAMI 4.0 e (IIRA) IIoT.\n\nSviluppato da due studenti dell\'Università degli Studi di Catania (Italy) per il corso di Informatica Industriale.\n\nPer qualsiasi informazioni è possibile contattare gli sviluppatori ai seguenti indirizzi e-mail:\ntwistedfatedeveloper@gmail.com\ntwistedappdeveloper@gmail.com</string>
+    <string name="ChiudiSessione">Chiudi sessione</string>
+
+    <string-array name="timestamps">
+        <item>Both</item>
+        <item>Server</item>
+        <item>Source</item>
+        <item>Neither</item>
+    </string-array>
+    <string-array name="WriteType">
+        <item>Double</item>
+        <item>String</item>
+        <item>Boolean</item>
+    </string-array>
+
+</resources>

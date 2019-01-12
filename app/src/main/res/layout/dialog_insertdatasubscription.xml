@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/InserisciparametriSottoscrizione"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/PublishingInterval"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtRequestedPublishingInterval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/RequestedPublishInterval"
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MaxKeepAliveCount"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtRequestedMaxKeepAliveCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/RequestedMaxKeepAliveCount"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/LifetimeCount"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtRequestedLifetimeCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/RequestedLifetimeCount"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MaxNotificationperPublish"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtMaxNotificationPerPublish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/MaxNotificationperPublish"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Priority"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtPriotity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Priority"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <CheckBox
+        android:id="@+id/checkPublishingEnable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:enabled="false"
+        android:text="@string/PublishingEnable"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btnOkSubscription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CreaSottoscrizione" />
+
+</LinearLayout>

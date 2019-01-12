@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ReadActivity">
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/operazionelettura"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnNewRead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inseriscidatilettura" />
+
+    <TextView
+        android:id="@+id/txtelencoletture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/elencoletture"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/list_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b4b2b2" />
+</LinearLayout>
