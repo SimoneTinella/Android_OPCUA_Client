@@ -10,4 +10,9 @@ Developed by two students of the University of Catania (Italy) for the course of
 
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/endpoints.jpg?raw=true)
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/browse.jpg?browse=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/browse.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/subscription.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/subhome.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoreditem.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoredhome.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoring.jpg?raw=true)
