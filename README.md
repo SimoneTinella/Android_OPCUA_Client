@@ -8,4 +8,6 @@ This demo version was developed to show the potential of the OPC UA standard. To
 Developed by two students of the University of Catania (Italy) for the course of Industrial Informatics.
 
 
-![alt text](https://lh3.googleusercontent.com/5o5NRIR2dvoYWq4hrin1-ERrI7WKJoY9CaYQQHqD7iixxSViTvryTqHo-dbDhRFCXMs=w1280-h882-rw)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/endpoints.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home.jpg?browse=true)
