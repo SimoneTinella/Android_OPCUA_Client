@@ -1,12 +1,9 @@
 # Android OPCUA Client
 An Android OPC UA Client based on official OPC Foundation Java Stack.
 
-Available on Google Play Store: https://play.google.com/store/apps/details?id=org.twistedappdeveloper.opcclient&hl=it
+This project has been developend inside the course of Industrial Informatics at University of Catania (DIEEI) teached by Prof.Salvatore Cavalieri. The aim of the project was the realisation of an App on Android making a Client full compliant with OPC UA specifications. The App has been developed by Simone Tinella and Luis Antonio Previti and is available for free at https://play.google.com/store/apps/details?id=org.twistedappdeveloper.opcclient&hl=it
 
-This demo version was developed to show the potential of the OPC UA standard. Today, this standard is relevant because it has been included in the main reference models of industrial architecture such as RAMI 4.0 and IIoT.
-
-Developed by two students of the University of Catania (Italy) for the course of Industrial Informatics.
-
+It is a demo version developed to show the potential of the OPC UA standard. OPCUA has been included in the main reference models of industrial architecture such as RAMI 4.0 and IIoT.
 
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/endpoints.jpg?raw=true)
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home.jpg?raw=true)
