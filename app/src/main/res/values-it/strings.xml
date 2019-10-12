@@ -70,6 +70,7 @@
     <string name="protocollononsupportato">L\'unico protocollo di trasporto supportato in questo momento è il TCP.\nScegli degli endpoint opc.tcp</string>
     <string name="infoMessage">Questa applicazione in versione demo è stata sviluppata per mostrare le potenzialità dello standard OPC UA. Si tratta di uno standard di rilievo in quanto è stato incluso nei principali modelli di riferimento architetturali industriali come RAMI 4.0 e (IIRA) IIoT.\n\nSviluppato da due studenti dell\'Università degli Studi di Catania (Italy) per il corso di Informatica Industriale.\n\nPer qualsiasi informazioni è possibile contattare gli sviluppatori ai seguenti indirizzi e-mail:\ntwistedfatedeveloper@gmail.com\ntwistedappdeveloper@gmail.com</string>
     <string name="ChiudiSessione">Chiudi sessione</string>
+    <string name="value_type">Tipo valore:&#160;</string>
 
     <string-array name="timestamps">
         <item>Both</item>

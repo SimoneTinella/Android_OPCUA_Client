@@ -22,11 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:textStyle="bold"
         tools:text="TextView" />
 
     <ListView
         android:id="@+id/listMonitoraggio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#b4b2b2" />
+        android:background="@color/colorPrimaryDark" />
 </LinearLayout>

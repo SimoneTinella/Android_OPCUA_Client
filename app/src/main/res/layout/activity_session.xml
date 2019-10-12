@@ -56,32 +56,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/read"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <Button
         android:id="@+id/btnWrite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/write" />
+        android:text="@string/write"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <Button
         android:id="@+id/btnBrowse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/browse"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <Button
         android:id="@+id/btnSubscribe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/subscribe"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <Button
         android:id="@+id/btnMonitoring"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/monitoraggio" />
+        android:text="@string/monitoraggio"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
 </LinearLayout>

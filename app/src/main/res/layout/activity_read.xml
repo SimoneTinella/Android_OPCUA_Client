@@ -22,7 +22,8 @@
         android:id="@+id/btnNewRead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/inseriscidatilettura" />
+        android:text="@string/inseriscidatilettura"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <TextView
         android:id="@+id/txtelencoletture"
@@ -38,5 +39,5 @@
         android:id="@+id/list_read"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#b4b2b2" />
+        android:background="@color/colorPrimaryDark" />
 </LinearLayout>

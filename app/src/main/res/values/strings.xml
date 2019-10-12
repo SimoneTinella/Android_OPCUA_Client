@@ -105,6 +105,7 @@
     <string name="sottoscrizioniscadute">Some subscriptions have expired</string>
     <string name="sottoscrizionescaduta">The subscription has expired</string>
     <string name="sessionid" translatable="false">SessionID</string>
+    <string name="value_type">Value Type:&#160;</string>
 
 
     <string-array name="timestamps">

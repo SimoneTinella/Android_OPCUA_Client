@@ -159,7 +159,8 @@
                 android:id="@+id/btnOkMonitoredItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@android:string/ok" />
+                android:text="@android:string/ok"
+                style="@style/Widget.AppCompat.Button.Colored"/>
 
         </LinearLayout>
     </ScrollView>

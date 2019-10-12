@@ -45,7 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtParametriSottoscrizione"
         android:layout_centerHorizontal="true"
-        android:text="@string/creamonitem" />
+        android:text="@string/creamonitem"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <ListView
         android:id="@+id/listMonitoredItem"
@@ -53,5 +54,5 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btnCreateMonitoredItem"
-        android:background="#b4b2b2"/>
+        android:background="@color/colorPrimaryDark"/>
 </RelativeLayout>

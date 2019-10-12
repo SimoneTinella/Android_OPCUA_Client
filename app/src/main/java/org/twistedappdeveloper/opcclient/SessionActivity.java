@@ -1,5 +1,6 @@
 package org.twistedappdeveloper.opcclient;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -141,7 +142,7 @@ public class SessionActivity extends AppCompatActivity {
                                         CreateSubscriptionRequest req = new CreateSubscriptionRequest(null, requestedPublishInterval, requestedLifetimeCount, requestedMaxKeepAliveCount, maxNotificationPerPublish, publishingEnabled, priority);
                                         ThreadCreateSubscription t = new ThreadCreateSubscription(sessionElement, req);
                                         progressDialog = ProgressDialog.show(SessionActivity.this, getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneSottoscrizione), true);
-                                        Handler handler_subscription = new Handler() {
+                                        @SuppressLint("HandlerLeak") Handler handler_subscription = new Handler() {
                                             @Override
                                             public void handleMessage(Message msg) {
                                                 progressDialog.dismiss();
@@ -221,7 +222,7 @@ public class SessionActivity extends AppCompatActivity {
                                         t = new ThreadWrite(sessionElement.getSession(), namespace, nodeid, Attributes.Value, value_write);
                                     else
                                         t = new ThreadWrite(sessionElement.getSession(), namespace, nodeid_string, Attributes.Value, value_write);
-                                    Handler handler = new Handler() {
+                                    @SuppressLint("HandlerLeak") Handler handler = new Handler() {
                                         @Override
                                         public void handleMessage(Message msg) {
                                             progressDialog.dismiss();

@@ -51,10 +51,25 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="159dp" />
 
-    <Spinner
-        android:id="@+id/spinnertype"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/value_type"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnertype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnOkWrite"
@@ -62,7 +77,8 @@
         android:layout_height="wrap_content"
         android:text="@android:string/ok"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="381dp" />
+        tools:layout_editor_absoluteY="381dp"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
 </LinearLayout>
 
