@@ -8,11 +8,21 @@
     android:orientation="vertical">
 
 
-    <pl.droidsonroids.gif.GifImageView
+    <TextView
+        android:id="@+id/textView23"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/giphy"
-        />
+        android:layout_height="wrap_content"
+        android:text="Long Press Funcionality"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/long_press_tutorial"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
 
