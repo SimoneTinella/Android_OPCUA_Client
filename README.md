@@ -5,11 +5,11 @@ This project has been developed inside the course of Industrial Informatics at U
 
 It is a demo version developed to show the potential of the OPC UA standard. OPC UA has been included in the main reference models of industrial architecture such as RAMI 4.0 and IIoT.
 
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/endpoints.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/browse.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/subscription.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/subhome.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoreditem.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoredhome.jpg?raw=true)
-![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoring.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/endpoints1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/home1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/browse1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/subscription1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/actionmenu.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoreditem1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoredhome1.0.8.jpg?raw=true)
+![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoring1.0.8.jpg?raw=true)
