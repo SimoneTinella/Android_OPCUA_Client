@@ -87,7 +87,7 @@ public class BrowseFragment extends Fragment {
                 String[] colors = {"Read", "Write", "Browse"};
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle("What do you want to do?");
+                builder.setTitle(getString(R.string.menu_azioni));
                 builder.setItems(colors, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
