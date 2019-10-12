@@ -1,7 +1,7 @@
 package org.twistedappdeveloper.opcclient;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import OpcUtils.SessionElement;
 import tool.ui.ReadMonitoredAdapter;
 
 public class MonitoredItemActivity extends AppCompatActivity {
-    public final static int refreshrate=100;
+    public final static int refreshrate = 100;
 
     TextView txtData;
     SessionElement sessionElement;
@@ -29,32 +29,32 @@ public class MonitoredItemActivity extends AppCompatActivity {
     UnsignedInteger LastSeqNumber;
     ListView listMonRead;
     ReadMonitoredAdapter adapter;
-    static boolean running=false;
+    static boolean running = false;
     TextView txtBuffer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitored_item);
-        txtData =findViewById(R.id.txtMonitoredDati);
-        listMonRead= findViewById(R.id.listMonitoredRead);
-        txtBuffer= findViewById(R.id.txtBufferLetture);
-        LastSeqNumber= new UnsignedInteger(0);
+        txtData = findViewById(R.id.txtMonitoredDati);
+        listMonRead = findViewById(R.id.listMonitoredRead);
+        txtBuffer = findViewById(R.id.txtBufferLetture);
+        LastSeqNumber = new UnsignedInteger(0);
 
-        txtBuffer.setText(getString(R.string.Ultime)+ MonitoredItemElement.buffersize +getString(R.string.letture));
-        int session_pos= getIntent().getIntExtra("sessionPosition",-1);
-        sub_pos= getIntent().getIntExtra("subPosition",-1);
-        mon_pos= getIntent().getIntExtra("monPosition",-1);
+        txtBuffer.setText(getString(R.string.Ultime) + MonitoredItemElement.buffersize + getString(R.string.letture));
+        int session_pos = getIntent().getIntExtra("sessionPosition", -1);
+        sub_pos = getIntent().getIntExtra("subPosition", -1);
+        mon_pos = getIntent().getIntExtra("monPosition", -1);
 
-        sessionElement= ManagerOPC.getIstance().getSessions().get(session_pos);
+        sessionElement = ManagerOPC.getIstance().getSessions().get(session_pos);
 
-        adapter= new ReadMonitoredAdapter(MonitoredItemActivity.this,R.layout.list_monitoredreadings,sessionElement.getSubscriptions().get(sub_pos).getMonitoreditems().get(mon_pos).getReadings());
+        adapter = new ReadMonitoredAdapter(MonitoredItemActivity.this, R.layout.list_monitoredreadings, sessionElement.getSubscriptions().get(sub_pos).getMonitoreditems().get(mon_pos).getReadings());
         listMonRead.setAdapter(adapter);
 
-        CreateMonitoredItemsResponse mi= sessionElement.getSubscriptions().get(sub_pos).getMonitoreditems().get(mon_pos).getMonitoreditem();
-        String text="Monitored Item ID: "+mi.getResults()[0].getMonitoredItemId()+
-                "\nSampling Interval: "+mi.getResults()[0].getRevisedSamplingInterval()+
-                "\nQueue Size: "+mi.getResults()[0].getRevisedQueueSize();
+        CreateMonitoredItemsResponse mi = sessionElement.getSubscriptions().get(sub_pos).getMonitoreditems().get(mon_pos).getMonitoreditem();
+        String text = "Monitored Item ID: " + mi.getResults()[0].getMonitoredItemId() +
+                "\nSampling Interval: " + mi.getResults()[0].getRevisedSamplingInterval() +
+                "\nQueue Size: " + mi.getResults()[0].getRevisedQueueSize();
         txtData.setText(text);
 
         subAck = new SubscriptionAcknowledgement();
@@ -70,7 +70,7 @@ public class MonitoredItemActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(getRunning()){
+                while (getRunning()) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -95,7 +95,7 @@ public class MonitoredItemActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater= getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.monitoreditemmenu, menu);
         return true;
     }
@@ -108,7 +108,7 @@ public class MonitoredItemActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        while(getRunning()){
+                        while (getRunning()) {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -137,7 +137,7 @@ public class MonitoredItemActivity extends AppCompatActivity {
         MonitoredItemActivity.running = running;
     }
 
-    public static synchronized boolean getRunning(){
+    public static synchronized boolean getRunning() {
         return MonitoredItemActivity.running;
     }
 }

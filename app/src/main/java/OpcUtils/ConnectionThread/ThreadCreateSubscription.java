@@ -10,11 +10,11 @@ import OpcUtils.SessionElement;
 
 public class ThreadCreateSubscription extends Thread {
 
-    Handler handler;
-    SessionElement session;
-    CreateSubscriptionRequest request;
-    int position =-1;
-    boolean sent =false;
+    private Handler handler;
+    private SessionElement session;
+    private CreateSubscriptionRequest request;
+    private int position =-1;
+    private boolean sent =false;
 
     public ThreadCreateSubscription(SessionElement session, CreateSubscriptionRequest request){
         this.session=session;

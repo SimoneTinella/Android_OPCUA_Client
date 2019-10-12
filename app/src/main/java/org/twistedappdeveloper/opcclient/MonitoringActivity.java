@@ -1,7 +1,7 @@
 package org.twistedappdeveloper.opcclient;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,28 +21,29 @@ public class MonitoringActivity extends AppCompatActivity {
     ManagerOPC managerOPC;
     SessionElement sessionElement;
     MonitoringAdapter adapter;
-    static boolean running=true;
+    static boolean running = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitoring);
 
         listMonitoring = findViewById(R.id.listMonitoraggio);
-        txtSessionMonitoring= findViewById(R.id.txtSessionMonitoring);
+        txtSessionMonitoring = findViewById(R.id.txtSessionMonitoring);
 
-        managerOPC =ManagerOPC.getIstance();
+        managerOPC = ManagerOPC.getIstance();
 
-        session_position=getIntent().getIntExtra("SessionPosition",-1);
-        if(session_position<0){
-            Toast.makeText(MonitoringActivity.this, R.string.ErroreLetturaSessione,Toast.LENGTH_LONG).show();
+        session_position = getIntent().getIntExtra("sessionPosition", -1);
+        if (session_position < 0) {
+            Toast.makeText(MonitoringActivity.this, R.string.ErroreLetturaSessione, Toast.LENGTH_LONG).show();
             finish();
         }
 
-        sessionElement= managerOPC.getSessions().get(session_position);
+        sessionElement = managerOPC.getSessions().get(session_position);
 
-        txtSessionMonitoring.setText(getString(R.string.sessionid)+"\n"+sessionElement.getSession().getSession().getName());
+        txtSessionMonitoring.setText(getString(R.string.sessionid) + "\n" + sessionElement.getSession().getSession().getName());
 
-        adapter= new MonitoringAdapter(MonitoringActivity.this,R.layout.list_monitoring,sessionElement.getSubscriptions());
+        adapter = new MonitoringAdapter(MonitoringActivity.this, R.layout.list_monitoring, sessionElement.getSubscriptions());
         listMonitoring.setAdapter(adapter);
 
     }
@@ -54,7 +55,7 @@ public class MonitoringActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(getRunning()){
+                while (getRunning()) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -74,13 +75,13 @@ public class MonitoringActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        running=false;
+        running = false;
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater= getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.monitoreditemmenu, menu);
         return true;
     }
@@ -93,7 +94,7 @@ public class MonitoringActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        while(getRunning()){
+                        while (getRunning()) {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -122,7 +123,7 @@ public class MonitoringActivity extends AppCompatActivity {
         MonitoredItemActivity.running = running;
     }
 
-    public static synchronized boolean getRunning(){
+    public static synchronized boolean getRunning() {
         return MonitoredItemActivity.running;
     }
 

@@ -10,12 +10,12 @@ public class MonitoredItemElement {
     private CreateMonitoredItemsResponse monitoreditem;
     private CreateMonitoredItemsRequest monitoreditem_request;
     private LinkedList<MonitoredItemNotification> readings;
-    public static final int buffersize=5;
+    public static final int buffersize = 5;
 
     public MonitoredItemElement(CreateMonitoredItemsResponse monitoreditem,
                                 CreateMonitoredItemsRequest monitoreditem_request) {
         this.monitoreditem = monitoreditem;
-        this.monitoreditem_request=monitoreditem_request;
+        this.monitoreditem_request = monitoreditem_request;
         readings = new LinkedList<>();
     }
 
@@ -27,8 +27,8 @@ public class MonitoredItemElement {
         return readings;
     }
 
-    public void insertNotification(MonitoredItemNotification notification){
-        if(readings.size()==buffersize)
+    public void insertNotification(MonitoredItemNotification notification) {
+        if (readings.size() == buffersize)
             readings.removeLast();
         readings.addFirst(notification);
     }

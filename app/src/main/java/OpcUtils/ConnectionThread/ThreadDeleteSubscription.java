@@ -9,10 +9,10 @@ import org.opcfoundation.ua.common.ServiceResultException;
 
 public class ThreadDeleteSubscription extends Thread {
 
-    Handler handler;
-    SessionChannel session;
-    UnsignedInteger subid;
-    boolean sent =false;
+    private Handler handler;
+    private SessionChannel session;
+    private UnsignedInteger subid;
+    private boolean sent =false;
 
     public ThreadDeleteSubscription(SessionChannel session, UnsignedInteger subid){
         this.session=session;

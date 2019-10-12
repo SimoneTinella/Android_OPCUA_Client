@@ -1,14 +1,15 @@
 package org.twistedappdeveloper.opcclient;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -39,15 +40,15 @@ import org.opcfoundation.ua.core.MonitoringParameters;
 import org.opcfoundation.ua.core.ReadValueId;
 import org.opcfoundation.ua.core.TimestampsToReturn;
 
-import OpcUtils.ManagerOPC;
-import OpcUtils.SubscriptionElement;
 import OpcUtils.ConnectionThread.ThreadCreateMonitoredItem;
 import OpcUtils.ConnectionThread.ThreadDeleteSubscription;
+import OpcUtils.ManagerOPC;
+import OpcUtils.SubscriptionElement;
 import tool.ui.MonitoredItemAdapter;
 
 public class SubscriptionActivity extends AppCompatActivity {
 
-    static int idchandle=0;
+    static int idchandle = 0;
     ManagerOPC managerOPC;
     SubscriptionElement subscriptionElement;
     TextView txtInfoSubscription, txtSubscriptionParameters;
@@ -65,38 +66,39 @@ public class SubscriptionActivity extends AppCompatActivity {
     double deadband;
     int session_position;
     int sub_position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
 
-        managerOPC =ManagerOPC.getIstance();
-        session_position= getIntent().getIntExtra("sessionPosition",-1);
-        sub_position= getIntent().getIntExtra("subPosition",-1);
-        if(session_position<0 || sub_position<0){
-            Toast.makeText(SubscriptionActivity.this, R.string.ErroreLetturaSottoscrizione,Toast.LENGTH_LONG).show();
+        managerOPC = ManagerOPC.getIstance();
+        session_position = getIntent().getIntExtra("sessionPosition", -1);
+        sub_position = getIntent().getIntExtra("subPosition", -1);
+        if (session_position < 0 || sub_position < 0) {
+            Toast.makeText(SubscriptionActivity.this, R.string.ErroreLetturaSottoscrizione, Toast.LENGTH_LONG).show();
             finish();
         }
 
-        subscriptionElement= managerOPC.getSessions().get(session_position).getSubscriptions().get(sub_position);
+        subscriptionElement = managerOPC.getSessions().get(session_position).getSubscriptions().get(sub_position);
 
         txtInfoSubscription = findViewById(R.id.txtInfoSottoscrizione);
-        txtSubscriptionParameters =findViewById(R.id.txtParametriSottoscrizione);
+        txtSubscriptionParameters = findViewById(R.id.txtParametriSottoscrizione);
         btnNewMonitoredItem = findViewById(R.id.btnCreateMonitoredItem);
-        listMonitoredItem= findViewById(R.id.listMonitoredItem);
+        listMonitoredItem = findViewById(R.id.listMonitoredItem);
 
-        adapter= new MonitoredItemAdapter(SubscriptionActivity.this,R.id.listMonitoredItem,subscriptionElement.getMonitoreditems());
+        adapter = new MonitoredItemAdapter(SubscriptionActivity.this, R.id.listMonitoredItem, subscriptionElement.getMonitoreditems());
         listMonitoredItem.setAdapter(adapter);
 
-        String testo="Endpoint\n"+subscriptionElement.getSession().getSession().getEndpoint().getEndpointUrl()+
-                "\nSessionID\n"+subscriptionElement.getSession().getSession().getName()+
-                "\nSubscriptionID\n"+subscriptionElement.getSubscription().getSubscriptionId();
+        String testo = "Endpoint\n" + subscriptionElement.getSession().getSession().getEndpoint().getEndpointUrl() +
+                "\nSessionID\n" + subscriptionElement.getSession().getSession().getName() +
+                "\nSubscriptionID\n" + subscriptionElement.getSubscription().getSubscriptionId();
         txtInfoSubscription.setText(testo);
 
-        testo=getString(R.string.ParametriRestituiti) +
-                "\nPublishInterval: "+subscriptionElement.getSubscription().getRevisedPublishingInterval()+
-                "\nLifetimeCount: "+subscriptionElement.getSubscription().getRevisedLifetimeCount()+
-                "\nMaxKeepAliveCount: "+subscriptionElement.getSubscription().getRevisedMaxKeepAliveCount();
+        testo = getString(R.string.ParametriRestituiti) +
+                "\nPublishInterval: " + subscriptionElement.getSubscription().getRevisedPublishingInterval() +
+                "\nLifetimeCount: " + subscriptionElement.getSubscription().getRevisedLifetimeCount() +
+                "\nMaxKeepAliveCount: " + subscriptionElement.getSubscription().getRevisedMaxKeepAliveCount();
         txtSubscriptionParameters.setText(testo);
 
         btnNewMonitoredItem.setOnClickListener(new View.OnClickListener() {
@@ -199,7 +201,7 @@ public class SubscriptionActivity extends AppCompatActivity {
 
                             ThreadCreateMonitoredItem t = new ThreadCreateMonitoredItem(subscriptionElement, mi);
                             progressDialog = ProgressDialog.show(SubscriptionActivity.this, getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneMonItemInCorso), true);
-                            Handler handler_monitoreditem = new Handler() {
+                            @SuppressLint("HandlerLeak") Handler handler_monitoreditem = new Handler() {
                                 @Override
                                 public void handleMessage(Message msg) {
                                     progressDialog.dismiss();
@@ -224,17 +226,17 @@ public class SubscriptionActivity extends AppCompatActivity {
                 });
 
                 dialog.show();
-                }
+            }
 
         });
 
         listMonitoredItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent= new Intent(SubscriptionActivity.this,MonitoredItemActivity.class);
-                intent.putExtra("sessionPosition",session_position);
-                intent.putExtra("subPosition",sub_position);
-                intent.putExtra("monPosition",position);
+                Intent intent = new Intent(SubscriptionActivity.this, MonitoredItemActivity.class);
+                intent.putExtra("sessionPosition", session_position);
+                intent.putExtra("subPosition", sub_position);
+                intent.putExtra("monPosition", position);
                 startActivity(intent);
             }
         });
@@ -244,7 +246,7 @@ public class SubscriptionActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater= getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.subscriptionmenu, menu);
         return true;
     }

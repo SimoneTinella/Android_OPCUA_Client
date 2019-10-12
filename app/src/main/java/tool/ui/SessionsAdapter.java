@@ -21,11 +21,11 @@ public class SessionsAdapter extends ArrayAdapter<SessionElement> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView= inflater.inflate(R.layout.list_session,null);
-        TextView endpoint= convertView.findViewById(R.id.txtSession);
-        SessionElement obj= getItem(position);
-        String text="Url: "+obj.getUrl()+"\nSessionID: "+obj.getSession().getSession().getName()+"\nEndpoint: "+obj.getSession().getSession().getEndpoint().getEndpointUrl();
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.list_session, null);
+        TextView endpoint = convertView.findViewById(R.id.txtSession);
+        SessionElement obj = getItem(position);
+        String text = "Url: " + obj.getUrl() + "\nSessionID: " + obj.getSession().getSession().getName() + "\nEndpoint: " + obj.getSession().getSession().getEndpoint().getEndpointUrl();
         endpoint.setText(text);
         return convertView;
     }

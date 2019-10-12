@@ -16,14 +16,14 @@ import org.opcfoundation.ua.core.WriteValue;
 
 
 public class ThreadWrite extends Thread {
-    Handler handler;
-    int namespace;
-    int nodeId;
-    String nodeId_String;
-    UnsignedInteger attribute;
-    SessionChannel session;
-    boolean sent =false;
-    Variant valueToWrite;
+    private Handler handler;
+    private int namespace;
+    private int nodeId;
+    private String nodeId_String;
+    private UnsignedInteger attribute;
+    private SessionChannel session;
+    private boolean sent =false;
+    private Variant valueToWrite;
 
     public ThreadWrite(SessionChannel session, int namespace, int nodeId, UnsignedInteger attribute, Variant valueToWrite){
         this.valueToWrite=valueToWrite;

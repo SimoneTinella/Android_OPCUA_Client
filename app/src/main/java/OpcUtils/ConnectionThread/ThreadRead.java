@@ -13,15 +13,15 @@ import org.opcfoundation.ua.core.TimestampsToReturn;
 
 public class ThreadRead extends Thread {
 
-    Handler handler;
-    double MaxAge;
-    TimestampsToReturn timestamp;
-    int namespace;
-    int nodeId;
-    String nodeId_String;
-    UnsignedInteger attribute;
-    SessionChannel session;
-    boolean sent =false;
+    private Handler handler;
+    private double MaxAge;
+    private TimestampsToReturn timestamp;
+    private int namespace;
+    private int nodeId;
+    private String nodeId_String;
+    private UnsignedInteger attribute;
+    private SessionChannel session;
+    private boolean sent =false;
 
     public ThreadRead(SessionChannel session,double MaxAge, TimestampsToReturn timestamp, int namespace, int nodeId, UnsignedInteger attribute){
         this.MaxAge=MaxAge;

@@ -21,13 +21,13 @@ public class MonitoredItemAdapter extends ArrayAdapter<MonitoredItemElement> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView= inflater.inflate(R.layout.list_monitored,null);
-        TextView monitored= convertView.findViewById(R.id.txtMonitored);
-        MonitoredItemElement obj= getItem(position);
-        String text="Monitored Item ID: "+obj.getMonitoreditem().getResults()[0].getMonitoredItemId()+
-                "\nSampling Interval: "+obj.getMonitoreditem().getResults()[0].getRevisedSamplingInterval()+
-                "\nQueue Size: "+obj.getMonitoreditem().getResults()[0].getRevisedQueueSize();
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.list_monitored, null);
+        TextView monitored = convertView.findViewById(R.id.txtMonitored);
+        MonitoredItemElement obj = getItem(position);
+        String text = "Monitored Item ID: " + obj.getMonitoreditem().getResults()[0].getMonitoredItemId() +
+                "\nSampling Interval: " + obj.getMonitoreditem().getResults()[0].getRevisedSamplingInterval() +
+                "\nQueue Size: " + obj.getMonitoreditem().getResults()[0].getRevisedQueueSize();
         monitored.setText(text);
         return convertView;
     }

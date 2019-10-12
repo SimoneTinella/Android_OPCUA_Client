@@ -11,11 +11,11 @@ import OpcUtils.SubscriptionElement;
 
 public class ThreadCreateMonitoredItem extends Thread {
 
-    Handler handler;
-    SubscriptionElement subElement;
-    CreateMonitoredItemsRequest request;
-    int position =-1;
-    boolean sent =false;
+    private Handler handler;
+    private SubscriptionElement subElement;
+    private CreateMonitoredItemsRequest request;
+    private int position =-1;
+    private boolean sent =false;
 
     public ThreadCreateMonitoredItem(SubscriptionElement subElement, CreateMonitoredItemsRequest request){
         this.subElement=subElement;

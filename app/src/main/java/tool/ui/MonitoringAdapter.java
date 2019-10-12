@@ -24,21 +24,21 @@ public class MonitoringAdapter extends ArrayAdapter<SubscriptionElement> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView= inflater.inflate(R.layout.list_monitoring,null);
-        SubscriptionElement obj= getItem(position);
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.list_monitoring, null);
+        SubscriptionElement obj = getItem(position);
 
-        TextView txtSubID= convertView.findViewById(R.id.txtSubID);
-        ListView listSub= convertView.findViewById(R.id.listSubMonitored);
-        TextView txtpubinterval= convertView.findViewById(R.id.txtSubPubInterval);
+        TextView txtSubID = convertView.findViewById(R.id.txtSubID);
+        ListView listSub = convertView.findViewById(R.id.listSubMonitored);
+        TextView txtpubinterval = convertView.findViewById(R.id.txtSubPubInterval);
 
-        ViewGroup.LayoutParams l= listSub.getLayoutParams();
-        l.height= (int)getContext().getResources().getDimension(R.dimen.dim)*obj.getMonitoreditems().size();
+        ViewGroup.LayoutParams l = listSub.getLayoutParams();
+        l.height = (int) getContext().getResources().getDimension(R.dimen.dim) * obj.getMonitoreditems().size();
         listSub.setLayoutParams(l);
 
-        txtSubID.setText("Subscription ID: "+obj.getSubscription().getSubscriptionId());
-        txtpubinterval.setText("Publishing interval: "+obj.getSubscription().getRevisedPublishingInterval().toString()+" ms");
-        adapter= new SubMonitoraggioAdapter(getContext(),R.layout.list_submonitoring,obj.getMonitoreditems());
+        txtSubID.setText("Subscription ID: " + obj.getSubscription().getSubscriptionId());
+        txtpubinterval.setText("Publishing interval: " + obj.getSubscription().getRevisedPublishingInterval().toString() + " ms");
+        adapter = new SubMonitoraggioAdapter(getContext(), R.layout.list_submonitoring, obj.getMonitoreditems());
 
         listSub.setAdapter(adapter);
 

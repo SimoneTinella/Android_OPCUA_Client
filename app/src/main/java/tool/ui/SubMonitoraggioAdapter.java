@@ -23,35 +23,35 @@ public class SubMonitoraggioAdapter extends ArrayAdapter<MonitoredItemElement> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView= inflater.inflate(R.layout.list_submonitoring,null);
-        MonitoredItemElement obj= getItem(position);
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.list_submonitoring, null);
+        MonitoredItemElement obj = getItem(position);
 
-        TextView txtMonID= convertView.findViewById(R.id.txtMonID);
-        TextView submonval= convertView.findViewById(R.id.txtsubmonval);
-        TextView subsource= convertView.findViewById(R.id.txtsubsource);
-        TextView subserv= convertView.findViewById(R.id.txtsubserv);
-        TextView substatus= convertView.findViewById(R.id.txtsubstato);
+        TextView txtMonID = convertView.findViewById(R.id.txtMonID);
+        TextView submonval = convertView.findViewById(R.id.txtsubmonval);
+        TextView subsource = convertView.findViewById(R.id.txtsubsource);
+        TextView subserv = convertView.findViewById(R.id.txtsubserv);
+        TextView substatus = convertView.findViewById(R.id.txtsubstato);
 
-        txtMonID.setText("Item ID: "+obj.getMonitoreditem().getResults()[0].getMonitoredItemId());
+        txtMonID.setText("Item ID: " + obj.getMonitoreditem().getResults()[0].getMonitoredItemId());
 
         try {
-            String tmp="none";
+            String tmp = "none";
             MonitoredItemNotification notification = obj.getReadings().getFirst();
             submonval.setText("Val: " + notification.getValue().getValue());
-            if(notification.getValue().getSourceTimestamp()!=null){
-                tmp= notification.getValue().getSourceTimestamp().toString();
-                tmp= tmp.substring(0,tmp.length()-10);
+            if (notification.getValue().getSourceTimestamp() != null) {
+                tmp = notification.getValue().getSourceTimestamp().toString();
+                tmp = tmp.substring(0, tmp.length() - 10);
             }
             subsource.setText("Source Timestamp: " + tmp);
-            tmp="none";
-            if(notification.getValue().getServerTimestamp()!=null){
-                tmp=notification.getValue().getServerTimestamp().toString();
-                tmp= tmp.substring(0,tmp.length()-10);
+            tmp = "none";
+            if (notification.getValue().getServerTimestamp() != null) {
+                tmp = notification.getValue().getServerTimestamp().toString();
+                tmp = tmp.substring(0, tmp.length() - 10);
             }
             subserv.setText("Server Timestamp: " + tmp);
             substatus.setText("Status: " + notification.getValue().getStatusCode());
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             submonval.setText("Val: ");
             subsource.setText("Source Timestamp: ");
             subserv.setText("Server Timestamp: ");

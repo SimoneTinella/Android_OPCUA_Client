@@ -14,7 +14,7 @@ import OpcUtils.SessionElement;
 
 public class ThreadPublish extends Thread {
 
-    SessionElement sessionElement;
+    private SessionElement sessionElement;
     public ThreadPublish(SessionElement sessionElement) {
         this.sessionElement = sessionElement;
     }

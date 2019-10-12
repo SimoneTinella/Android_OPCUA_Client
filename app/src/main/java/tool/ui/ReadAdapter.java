@@ -20,14 +20,14 @@ public class ReadAdapter extends ArrayAdapter<ReadResponse> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView= inflater.inflate(R.layout.list_readings,null);
-        TextView endpoint= convertView.findViewById(R.id.txtReaging);
-        ReadResponse obj= getItem(position);
-        String text="Val: "+obj.getResults()[0].getValue().getValue()+
-                "\nStatus: "+obj.getResults()[0].getStatusCode()+
-                "\nServerTimestamp: "+obj.getResults()[0].getServerTimestamp()+
-                "\nSourceTimestamp: "+obj.getResults()[0].getSourceTimestamp();
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.list_readings, null);
+        TextView endpoint = convertView.findViewById(R.id.txtReaging);
+        ReadResponse obj = getItem(position);
+        String text = "Val: " + obj.getResults()[0].getValue().getValue() +
+                "\nStatus: " + obj.getResults()[0].getStatusCode() +
+                "\nServerTimestamp: " + obj.getResults()[0].getServerTimestamp() +
+                "\nSourceTimestamp: " + obj.getResults()[0].getSourceTimestamp();
 
         endpoint.setText(text);
         return convertView;

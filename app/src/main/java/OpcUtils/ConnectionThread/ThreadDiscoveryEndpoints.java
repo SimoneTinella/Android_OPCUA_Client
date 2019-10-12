@@ -9,10 +9,10 @@ import org.opcfoundation.ua.core.EndpointDescription;
 
 public class ThreadDiscoveryEndpoints extends Thread {
 
-    Handler handler;
-    String url;
-    Client client;
-    boolean sent =false;
+    private Handler handler;
+    private String url;
+    private Client client;
+    private boolean sent =false;
     public ThreadDiscoveryEndpoints(Client client, String url){
         this.url=url;
         this.client=client;

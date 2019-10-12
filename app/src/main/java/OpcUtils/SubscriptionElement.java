@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SubscriptionElement{
+public class SubscriptionElement {
     private CreateSubscriptionResponse subscription;
     private List<MonitoredItemElement> monitoreditems;
     private SessionChannel sessionChannel;
 
-    SubscriptionAcknowledgement subAck;
+    private SubscriptionAcknowledgement subAck;
 
     public void setLastSeqNumber(UnsignedInteger lastSeqNumber) {
         subAck.setSequenceNumber(lastSeqNumber);
@@ -32,8 +32,8 @@ public class SubscriptionElement{
 
     public SubscriptionElement(CreateSubscriptionResponse subscription, SessionChannel sessionChannel) {
         this.subscription = subscription;
-        this.monitoreditems= new ArrayList<>();
-        this.sessionChannel=sessionChannel;
+        this.monitoreditems = new ArrayList<>();
+        this.sessionChannel = sessionChannel;
 
         subAck = new SubscriptionAcknowledgement();
         subAck.setSubscriptionId(new UnsignedInteger(subscription.getSubscriptionId()));
@@ -54,13 +54,13 @@ public class SubscriptionElement{
 
     public int CreateMonitoredItem(CreateMonitoredItemsRequest mirequest)
             throws ServiceResultException, MonItemNotCreatedException {
-        CreateMonitoredItemsResponse response= sessionChannel.CreateMonitoredItems(mirequest);
-        if(response.getResults()[0].getStatusCode().getValue().intValue()!= StatusCode.GOOD.getValue()
+        CreateMonitoredItemsResponse response = sessionChannel.CreateMonitoredItems(mirequest);
+        if (response.getResults()[0].getStatusCode().getValue().intValue() != StatusCode.GOOD.getValue()
                 .intValue()) {
             throw new MonItemNotCreatedException(response.getResults()[0].getStatusCode()
                     .getDescription());
         }
-        monitoreditems.add(new MonitoredItemElement(response,mirequest));
-        return monitoreditems.size()-1;
+        monitoreditems.add(new MonitoredItemElement(response, mirequest));
+        return monitoreditems.size() - 1;
     }
 }

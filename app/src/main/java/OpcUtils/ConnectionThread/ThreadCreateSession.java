@@ -10,12 +10,12 @@ import OpcUtils.ManagerOPC;
 
 public class ThreadCreateSession extends Thread {
 
-    Handler handler;
-    ManagerOPC gestore;
-    EndpointDescription endpointDescription;
-    String url;
-    int position =-1;
-    boolean sent =false;
+    private Handler handler;
+    private ManagerOPC gestore;
+    private EndpointDescription endpointDescription;
+    private String url;
+    private int position =-1;
+    private boolean sent =false;
 
     public ThreadCreateSession(ManagerOPC gestore, String url, EndpointDescription endpointDescription){
         this.gestore=gestore;
