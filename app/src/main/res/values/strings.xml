@@ -106,6 +106,8 @@
     <string name="sottoscrizionescaduta">The subscription has expired</string>
     <string name="sessionid" translatable="false">SessionID</string>
     <string name="value_type">Value Type:&#160;</string>
+    <string name="long_press_info">Perform a long press touch on a item of the list to display the Action Menu.</string>
+    <string name="menu_azioni">Action Menu</string>
 
 
     <string-array name="timestamps">
