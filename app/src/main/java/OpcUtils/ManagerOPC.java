@@ -1,5 +1,6 @@
 package OpcUtils;
 
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.opcfoundation.ua.application.Application;
 import org.opcfoundation.ua.application.Client;
 import org.opcfoundation.ua.application.SessionChannel;
@@ -16,6 +17,7 @@ import org.opcfoundation.ua.core.EndpointDescription;
 import org.opcfoundation.ua.core.Identifiers;
 import org.opcfoundation.ua.core.NodeClass;
 import org.opcfoundation.ua.transport.security.Cert;
+import org.opcfoundation.ua.transport.security.CertificateValidator;
 import org.opcfoundation.ua.transport.security.KeyPair;
 import org.opcfoundation.ua.transport.security.PrivKey;
 import org.opcfoundation.ua.utils.CertificateUtils;
@@ -94,6 +96,9 @@ public class ManagerOPC {
                     }
                 }
                 myClientApplication.addApplicationInstanceCertificate(keys);
+                myClientApplication.getOpctcpSettings().setCertificateValidator(CertificateValidator.ALLOW_ALL);
+                myClientApplication.getHttpsSettings().setCertificateValidator(CertificateValidator.ALLOW_ALL);
+                myClientApplication.getHttpsSettings().setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
                 myClientApplication.setApplicationUri("org.twistedfatedeveloper.opclient");
                 client = new Client(myClientApplication);
             }

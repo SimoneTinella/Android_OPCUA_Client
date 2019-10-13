@@ -31,18 +31,23 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation files('libs/slf4j-api-1.7.25.jar')
-    implementation files('libs/prov-1.58.0.0.jar')
-    implementation files('libs/httpcore-nio-4.4.10.jar')
-    implementation files('libs/httpcore-4.4.10.jar')
-    implementation files('libs/httpclient-4.5.6.jar')
-    implementation files('libs/core-1.58.0.0.jar')
+    implementation 'org.slf4j:slf4j-android:1.7.7'
+
+    implementation group: 'com.madgag.spongycastle', name: 'prov', version: '1.54.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.54.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'pkix', version: '1.54.0.0'
+
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.54'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.54'
+
+    implementation group: 'org.apache.httpcomponents', name: 'httpcore-nio', version: '4.4.10'
+    implementation group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.10'
+
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.10'
     implementation files('libs/commons-logging-1.2.jar')
-    implementation files('libs/commons-codec-1.10.jar')
-    implementation files('libs/bcprov-jdk15on-1.60.jar')
-    implementation files('libs/bcpkix-jdk15on-1.60.jar')
-    implementation files('libs/bcpkix-jdk15on-1.58.0.0.jar')
-    implementation files('libs/opc-ua-stack-1.4.1-SNAPSHOT.jar')
+
+    implementation files('libs/httpclient-4.5.6.jar')
+    implementation files('libs/opc.jar')
 
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
