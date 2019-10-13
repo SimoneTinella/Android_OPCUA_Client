@@ -38,7 +38,7 @@ public class SubMonitoraggioAdapter extends ArrayAdapter<MonitoredItemElement> {
         try {
             String tmp = "none";
             MonitoredItemNotification notification = obj.getReadings().getFirst();
-            submonval.setText("Val: " + notification.getValue().getValue());
+            submonval.setText("Value: " + notification.getValue().getValue());
             if (notification.getValue().getSourceTimestamp() != null) {
                 tmp = notification.getValue().getSourceTimestamp().toString();
                 tmp = tmp.substring(0, tmp.length() - 10);
@@ -52,7 +52,7 @@ public class SubMonitoraggioAdapter extends ArrayAdapter<MonitoredItemElement> {
             subserv.setText("Server Timestamp: " + tmp);
             substatus.setText("Status: " + notification.getValue().getStatusCode());
         } catch (NoSuchElementException e) {
-            submonval.setText("Val: ");
+            submonval.setText("Value: ");
             subsource.setText("Source Timestamp: ");
             subserv.setText("Server Timestamp: ");
             substatus.setText("Status: ");

@@ -108,7 +108,7 @@
     <string name="value_type">Value Type:&#160;</string>
     <string name="long_press_info">Perform a long press touch on a item of the list to display the Action Menu.</string>
     <string name="menu_azioni">Action Menu</string>
-
+    <string name="result">Result</string>
 
     <string-array name="timestamps">
         <item>Both</item>

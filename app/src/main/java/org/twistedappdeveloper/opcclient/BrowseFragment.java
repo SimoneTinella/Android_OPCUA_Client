@@ -182,11 +182,20 @@ public class BrowseFragment extends Fragment {
                                 Toast.makeText(getContext(), R.string.ServerDown, Toast.LENGTH_LONG).show();
                             } else {
                                 ReadResponse res = (ReadResponse) msg.obj;
-                                String text = "Val: " + res.getResults()[0].getValue().getValue() +
+                                String text = "Value: " + res.getResults()[0].getValue().getValue() +
                                         "\nStatus: " + res.getResults()[0].getStatusCode() +
                                         "\nServerTimestamp: " + res.getResults()[0].getServerTimestamp() +
                                         "\nSourceTimestamp: " + res.getResults()[0].getSourceTimestamp();
-                                Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
+                                AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                                alertDialog.setTitle(getString(R.string.result));
+                                alertDialog.setMessage(text);
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        });
+                                alertDialog.show();
                                 progressDialog.dismiss();
                             }
                         }

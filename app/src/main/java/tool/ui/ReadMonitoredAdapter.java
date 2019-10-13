@@ -24,7 +24,7 @@ public class ReadMonitoredAdapter extends ArrayAdapter<MonitoredItemNotification
         convertView = inflater.inflate(R.layout.list_monitoredreadings, null);
         TextView monitored = convertView.findViewById(R.id.txtLetturaMonitored);
         MonitoredItemNotification obj = getItem(position);
-        String text = "Val:" + obj.getValue().getValue() +
+        String text = "Value:" + obj.getValue().getValue() +
                 "\nServer Timestamp:" + obj.getValue().getServerTimestamp() +
                 "\nSource Timestamp:" + obj.getValue().getSourceTimestamp() +
                 "\nStatus:" + obj.getValue().getStatusCode();

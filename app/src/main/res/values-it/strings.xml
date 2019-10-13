@@ -73,6 +73,7 @@
     <string name="value_type">Tipo valore:&#160;</string>
     <string name="long_press_info">Tieni premuto un elemento della lista per aprire il Menu delle azioni.</string>
     <string name="menu_azioni">Menu Azioni</string>
+    <string name="result">Risultato</string>
 
     <string-array name="timestamps">
         <item>Both</item>
