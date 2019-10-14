@@ -196,8 +196,8 @@ public class BrowseFragment extends Fragment {
                                             }
                                         });
                                 alertDialog.show();
-                                progressDialog.dismiss();
                             }
+                            progressDialog.dismiss();
                         }
                     };
                     t.start(handler);

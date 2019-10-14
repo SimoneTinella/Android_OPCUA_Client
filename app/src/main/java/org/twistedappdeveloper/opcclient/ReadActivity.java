@@ -126,8 +126,8 @@ public class ReadActivity extends AppCompatActivity {
                                         listReadings.add(res);
                                         adapter.notifyDataSetChanged();
                                         listRead.setSelection(adapter.getCount() - 1);
-                                        progressDialog.dismiss();
                                     }
+                                    progressDialog.dismiss();
                                 }
                             };
                             t.start(handler);

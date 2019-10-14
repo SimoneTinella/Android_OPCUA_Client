@@ -264,7 +264,7 @@ public class SubscriptionActivity extends AppCompatActivity {
                     case DialogInterface.BUTTON_POSITIVE:
                         ThreadDeleteSubscription t = new ThreadDeleteSubscription(subscriptionElement.getSession(), subscriptionElement.getSubscription().getSubscriptionId());
                         progressDialog = ProgressDialog.show(SubscriptionActivity.this, getString(R.string.TentativoDiConnessione), getString(R.string.CencellazioneSottoscrizioneInCorso), true);
-                        Handler handler_delete_subscription = new Handler() {
+                        @SuppressLint("HandlerLeak") Handler handler_delete_subscription = new Handler() {
                             @Override
                             public void handleMessage(Message msg) {
                                 progressDialog.dismiss();
