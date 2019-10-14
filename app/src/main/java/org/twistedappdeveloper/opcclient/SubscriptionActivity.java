@@ -48,7 +48,7 @@ import tool.ui.MonitoredItemAdapter;
 
 public class SubscriptionActivity extends AppCompatActivity {
 
-    static int idchandle = 0;
+    public static int idchandle = 0;
     ManagerOPC managerOPC;
     SubscriptionElement subscriptionElement;
     TextView txtInfoSubscription, txtSubscriptionParameters;
