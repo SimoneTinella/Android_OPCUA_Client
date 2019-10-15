@@ -33,12 +33,12 @@ dependencies {
 
     implementation 'org.slf4j:slf4j-android:1.7.25'
 
-    implementation group: 'com.madgag.spongycastle', name: 'prov', version: '1.54.0.0'
-    implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.54.0.0'
-    implementation group: 'com.madgag.spongycastle', name: 'pkix', version: '1.54.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'prov', version: '1.58.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.58.0.0'
+    implementation group: 'com.madgag.spongycastle', name: 'bcpkix-jdk15on', version: '1.58.0.0'
 
-    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.54'
-    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.54'
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.60'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.60'
 
     implementation group: 'org.apache.httpcomponents', name: 'httpcore-nio', version: '4.4.10'
     implementation group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.10'

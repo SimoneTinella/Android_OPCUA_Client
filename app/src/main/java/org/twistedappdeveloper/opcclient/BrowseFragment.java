@@ -51,6 +51,7 @@ import OpcUtils.ConnectionThread.ThreadRead;
 import OpcUtils.ConnectionThread.ThreadWrite;
 import OpcUtils.ManagerOPC;
 import OpcUtils.SessionElement;
+import OpcUtils.SubscriptionElement;
 import tool.ui.NodeAdapter;
 
 public class BrowseFragment extends Fragment {
@@ -131,6 +132,14 @@ public class BrowseFragment extends Fragment {
     }
 
     private void createMonItem(int position){
+
+
+        if(sessionElement.getSubscriptions().isEmpty()){
+            //creo sottoscrizione
+        }else{
+            //chiedo quale sottoscrizione usare
+        }
+        final SubscriptionElement subscriptionElement = sessionElement.getSubscriptions().get(0); //todo gestire ricerca ed eventuale creazione sottoscrizione
 
         final MonitoredItemCreateRequest[] monitoredItems = new MonitoredItemCreateRequest[1];
         monitoredItems[0] = new MonitoredItemCreateRequest();
@@ -234,11 +243,11 @@ public class BrowseFragment extends Fragment {
                     monitoredItems[0].setItemToMonitor(new ReadValueId(nodeId, Attributes.Value, null, null));
 
                     final CreateMonitoredItemsRequest mi = new CreateMonitoredItemsRequest();
-                    mi.setSubscriptionId(sessionElement.getSubscriptions().get(0).getSubscription().getSubscriptionId()); //FIXME gestire creazione e ricerca sottoscrizioni
+                    mi.setSubscriptionId(subscriptionElement.getSubscription().getSubscriptionId());
                     mi.setTimestampsToReturn(timestamp);
                     mi.setItemsToCreate(monitoredItems);
 
-                    ThreadCreateMonitoredItem t = new ThreadCreateMonitoredItem(sessionElement.getSubscriptions().get(0), mi); //FIXME gestire creazione e ricerca sottoscrizioni
+                    ThreadCreateMonitoredItem t = new ThreadCreateMonitoredItem(subscriptionElement, mi);
                     final ProgressDialog progressDialog = ProgressDialog.show( getContext(), getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneMonItemInCorso), true);
                     @SuppressLint("HandlerLeak") Handler handler_monitoreditem = new Handler() {
                         @Override
@@ -251,7 +260,7 @@ public class BrowseFragment extends Fragment {
                             } else if (msg.what == -3) {
                                 Toast.makeText(getContext(), getString(R.string.ErroreToast) + msg.obj.toString(), Toast.LENGTH_LONG).show();
                             } else {
-                                //TODO gestire creazione con successo
+                                //TODO creare messaggio adatto
                                 Toast.makeText(getContext(), "Creato con successo", Toast.LENGTH_LONG).show();
                             }
                         }
