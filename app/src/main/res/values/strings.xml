@@ -7,7 +7,7 @@
     <string name="protocolloopctcp">Endpoints list</string>
     <string name="exindirizzo">Ex. 192.168.1.3:51210</string>
     <string name="browser" translatable="false">Browser</string>
-    <string name="elencosottoscrizioni">Subscription List</string>
+    <string name="elencosottoscrizioni">Select the Subscription to use</string>
     <string name="monitoraggiosessione">Session Monitoring</string>
     <string name="monitoreditem" translatable="false">Monitored Item</string>
     <string name="operazionelettura">Read Operation</string>
@@ -109,6 +109,7 @@
     <string name="long_press_info">Perform a long press touch on a item of the list to display the Action Menu.</string>
     <string name="menu_azioni">Action Menu</string>
     <string name="result">Result</string>
+    <string name="createSubscriptionMon">No subscription present. Create one now</string>
 
     <string-array name="timestamps">
         <item>Both</item>

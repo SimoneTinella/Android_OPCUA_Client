@@ -28,10 +28,12 @@ import android.widget.Toast;
 import org.opcfoundation.ua.builtintypes.ExtensionObject;
 import org.opcfoundation.ua.builtintypes.NodeId;
 import org.opcfoundation.ua.builtintypes.StatusCode;
+import org.opcfoundation.ua.builtintypes.UnsignedByte;
 import org.opcfoundation.ua.builtintypes.UnsignedInteger;
 import org.opcfoundation.ua.builtintypes.Variant;
 import org.opcfoundation.ua.core.Attributes;
 import org.opcfoundation.ua.core.CreateMonitoredItemsRequest;
+import org.opcfoundation.ua.core.CreateSubscriptionRequest;
 import org.opcfoundation.ua.core.DataChangeFilter;
 import org.opcfoundation.ua.core.DataChangeTrigger;
 import org.opcfoundation.ua.core.DeadbandType;
@@ -47,12 +49,14 @@ import java.util.ArrayList;
 
 import OpcUtils.BrowseDataStamp;
 import OpcUtils.ConnectionThread.ThreadCreateMonitoredItem;
+import OpcUtils.ConnectionThread.ThreadCreateSubscription;
 import OpcUtils.ConnectionThread.ThreadRead;
 import OpcUtils.ConnectionThread.ThreadWrite;
 import OpcUtils.ManagerOPC;
 import OpcUtils.SessionElement;
 import OpcUtils.SubscriptionElement;
 import tool.ui.NodeAdapter;
+import tool.ui.SubscriptionAdapter;
 
 public class BrowseFragment extends Fragment {
     Bundle bundle;
@@ -131,16 +135,100 @@ public class BrowseFragment extends Fragment {
         return view;
     }
 
-    private void createMonItem(int position){
+    private void createMonItem(final int position) {
+        if (sessionElement.getSubscriptions().isEmpty()) {
+            Toast.makeText(getContext(),getString(R.string.createSubscriptionMon),Toast.LENGTH_LONG).show();
 
+            final Dialog dialog_subscription = new Dialog(getContext(), R.style.AppAlert);
+            dialog_subscription.setContentView(R.layout.dialog_insertdatasubscription);
 
-        if(sessionElement.getSubscriptions().isEmpty()){
-            //creo sottoscrizione
-        }else{
-            //chiedo quale sottoscrizione usare
+            final EditText edtRequestedPublishInteval = dialog_subscription.findViewById(R.id.edtRequestedPublishingInterval);
+            final EditText edtRequestedMaxKeepAliveCount = dialog_subscription.findViewById(R.id.edtRequestedMaxKeepAliveCount);
+            final EditText edtRequestedLifetimeCount = dialog_subscription.findViewById(R.id.edtRequestedLifetimeCount);
+            final EditText edtMaxNotificationPerPublish = dialog_subscription.findViewById(R.id.edtMaxNotificationPerPublish);
+            final EditText edtPriority = dialog_subscription.findViewById(R.id.edtPriotity);
+            final CheckBox checkPublishingEnable = dialog_subscription.findViewById(R.id.checkPublishingEnable);
+            Button btnOkSubscription = dialog_subscription.findViewById(R.id.btnOkSubscription);
+
+            edtRequestedLifetimeCount.setHint("Ex: " + ManagerOPC.Default_RequestedLifetimeCount);
+            edtMaxNotificationPerPublish.setHint("Ex: " + ManagerOPC.Default_MaxNotificationsPerPublish);
+            edtRequestedPublishInteval.setHint("Ex: " + ManagerOPC.Default_RequestedPublishingInterval);
+            edtRequestedMaxKeepAliveCount.setHint("Ex: " + ManagerOPC.Default_RequestedMaxKeepAliveCount);
+            edtPriority.setHint("Ex: " + ManagerOPC.Default_Priority);
+
+            btnOkSubscription.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Double requestedPublishInterval;
+                    UnsignedInteger requestedLifetimeCount;
+                    UnsignedInteger requestedMaxKeepAliveCount;
+                    UnsignedInteger maxNotificationPerPublish;
+                    UnsignedByte priority;
+                    boolean publishingEnabled;
+
+                    if (edtRequestedLifetimeCount.getText().toString().length() == 0 ||
+                            edtMaxNotificationPerPublish.getText().toString().length() == 0 ||
+                            edtRequestedPublishInteval.getText().toString().length() == 0 ||
+                            edtRequestedMaxKeepAliveCount.getText().toString().length() == 0 ||
+                            edtPriority.getText().toString().length() == 0) {
+                        Toast.makeText(getContext(), R.string.InserisciValoriValidi, Toast.LENGTH_LONG).show();
+                    } else {
+                        requestedLifetimeCount = new UnsignedInteger(edtRequestedLifetimeCount.getText().toString());
+                        maxNotificationPerPublish = new UnsignedInteger(edtMaxNotificationPerPublish.getText().toString());
+                        requestedPublishInterval = Double.parseDouble(edtRequestedPublishInteval.getText().toString());
+                        requestedMaxKeepAliveCount = new UnsignedInteger(edtRequestedMaxKeepAliveCount.getText().toString());
+                        priority = new UnsignedByte(edtPriority.getText().toString());
+                        publishingEnabled = checkPublishingEnable.isChecked();
+                        if (requestedLifetimeCount.intValue() >= 3 * requestedMaxKeepAliveCount.intValue()) {
+                            CreateSubscriptionRequest req = new CreateSubscriptionRequest(null, requestedPublishInterval, requestedLifetimeCount, requestedMaxKeepAliveCount, maxNotificationPerPublish, publishingEnabled, priority);
+                            ThreadCreateSubscription t = new ThreadCreateSubscription(sessionElement, req);
+                            final ProgressDialog progressDialog = ProgressDialog.show(getContext(),getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneSottoscrizione), true);
+                            @SuppressLint("HandlerLeak") Handler handler_subscription = new Handler() {
+                                @Override
+                                public void handleMessage(Message msg) {
+                                    progressDialog.dismiss();
+                                    if (msg.what == -1) {
+                                        Toast.makeText(getContext(), getString(R.string.SottoscrizioneFallita) + ((StatusCode) msg.obj).getDescription() + "\nCode: " + ((StatusCode) msg.obj).getValue().toString(), Toast.LENGTH_LONG).show();
+                                    } else if (msg.what == -2) {
+                                        Toast.makeText(getContext(), R.string.ServerDown, Toast.LENGTH_LONG).show();
+                                    } else {
+                                        int position = (int) msg.obj;
+                                        createMonitoredItemWithSubscription(sessionElement.getSubscriptions().get(position), position);
+                                    }
+                                }
+                            };
+                            dialog_subscription.dismiss();
+                            t.start(handler_subscription);
+                        } else {
+                            Toast.makeText(getContext(), getString(R.string.DeviRispettareVincolo) + "\nLifetimeCount>3*MaxKeepAliveCount", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+            });
+
+            dialog_subscription.show();
+
+        } else {
+            ListView listSubscriptions;
+            SubscriptionAdapter adapter;
+
+            final Dialog dialog = new Dialog(getContext(), R.style.AppAlert);
+            dialog.setContentView(R.layout.activity_list_subscription);
+            listSubscriptions = dialog.findViewById(R.id.listSubscriptions);
+            adapter = new SubscriptionAdapter(getContext(), R.layout.list_subscriptions, sessionElement.getSubscriptions());
+            listSubscriptions.setAdapter(adapter);
+            listSubscriptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int subPosition, long id) {
+                    createMonitoredItemWithSubscription(sessionElement.getSubscriptions().get(subPosition), position);
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
         }
-        final SubscriptionElement subscriptionElement = sessionElement.getSubscriptions().get(0); //todo gestire ricerca ed eventuale creazione sottoscrizione
+    }
 
+    private void createMonitoredItemWithSubscription(final SubscriptionElement subscriptionElement, int position) {
         final MonitoredItemCreateRequest[] monitoredItems = new MonitoredItemCreateRequest[1];
         monitoredItems[0] = new MonitoredItemCreateRequest();
 
@@ -175,7 +263,7 @@ public class BrowseFragment extends Fragment {
 
             int namespace, nodeid;
             String nodeid_String;
-            double sampling_interval,deadband;
+            double sampling_interval, deadband;
             UnsignedInteger queue_size;
             boolean discard_oldest;
 
@@ -248,7 +336,7 @@ public class BrowseFragment extends Fragment {
                     mi.setItemsToCreate(monitoredItems);
 
                     ThreadCreateMonitoredItem t = new ThreadCreateMonitoredItem(subscriptionElement, mi);
-                    final ProgressDialog progressDialog = ProgressDialog.show( getContext(), getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneMonItemInCorso), true);
+                    final ProgressDialog progressDialog = ProgressDialog.show(getContext(), getString(R.string.TentativoDiConnessione), getString(R.string.CreazioneMonItemInCorso), true);
                     @SuppressLint("HandlerLeak") Handler handler_monitoreditem = new Handler() {
                         @Override
                         public void handleMessage(Message msg) {
@@ -394,7 +482,7 @@ public class BrowseFragment extends Fragment {
             public void onClick(View v) {
                 int namespace, nodeid;
                 String nodeid_string;
-                Variant value_write= null;
+                Variant value_write = null;
 
                 if (edtnamespace_write.getText().toString().length() == 0 || edtnodeid_write.getText().toString().length() == 0 || edtvalue_write.getText().toString().length() == 0) {
                     Toast.makeText(getContext(), R.string.InserisciValoriValidi, Toast.LENGTH_SHORT).show();
