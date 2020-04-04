@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android_OPCUA_Client.iml" filepath="$PROJECT_DIR$/Android_OPCUA_Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Android_OPCUA_Client-app.iml" filepath="$PROJECT_DIR$/app/Android_OPCUA_Client-app.iml" group="Android_OPCUA_Client/app" />
+      <module fileurl="file://$PROJECT_DIR$/Repository-Android_OPCUA_Client.iml" filepath="$PROJECT_DIR$/Repository-Android_OPCUA_Client.iml" group="Android_OPCUA_Client" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

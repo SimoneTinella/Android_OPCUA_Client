@@ -6,14 +6,13 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.opcfoundation.ua.builtintypes.StatusCode;
@@ -21,8 +20,6 @@ import org.opcfoundation.ua.core.BrowseResponse;
 import org.opcfoundation.ua.core.Identifiers;
 import org.opcfoundation.ua.core.ReferenceDescription;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import OpcUtils.BackListener;
