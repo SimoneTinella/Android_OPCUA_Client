@@ -26,7 +26,7 @@
     <string name="EndpointsNontrovati">Non sono stati trovati Endpoints</string>
     <string name="ServerDown">Richiesta scaduta</string>
     <string name="VuoiCollegartiAllEndpoint">Vuoi collegarti a questo Endpoint?</string>
-    <string name="CreazioneSessione">Creazione sessione in corso...</string>
+    <string name="CreazioneSessione">Creazione sessione in corso…</string>
     <string name="SessioneNonCreata">La sessione non può essere creata\n</string>
     <string name="Errore">Errore</string>
     <string name="RichiestaBrowse">Richiesta di Browse al server</string>
@@ -36,23 +36,23 @@
     <string name="AggiornamentoAttivo">Aggiornamento interfaccia utente ON</string>
     <string name="AggiornamentoInPausa">Aggiornamento interfaccia utente OFF</string>
     <string name="InserisciValoriValidi">Inserisci dei valori validi</string>
-    <string name="LetturaInCorso">Lettura in corso...</string>
+    <string name="LetturaInCorso">Lettura in corso…</string>
     <string name="LetturaFallita">Non è stato possibile eseguire l\'operazione di lettura\n</string>
     <string name="CreazioneSottoscrizione">Creazione della sottoscrizione</string>
     <string name="SottoscrizioneFallita">La sottoscrizione non può essere creata\n</string>
     <string name="DeviRispettareVincolo">Devi rispettare il vincolo:</string>
-    <string name="WriteInCorso">Scrittura in corso...</string>
+    <string name="WriteInCorso">Scrittura in corso…</string>
     <string name="WriteFallita">Scrittura fallita\n</string>
     <string name="ValoriInviati">Valori inviati</string>
     <string name="EliminandoLaSessione">Cancellando la sessione tutte le sottoscrizioni ad essa legate verrano eliminate. Sei sicuro di voler eliminare questa sessione?</string>
     <string name="ErroreLetturaSottoscrizione">Errore lettura sottoscrizione</string>
     <string name="ParametriRestituiti">Parametri restituiti dal server</string>
-    <string name="CreazioneMonItemInCorso">Creazione Monitored Item in corso...</string>
+    <string name="CreazioneMonItemInCorso">Creazione Monitored Item in corso…</string>
     <string name="ErroreSconosciuto">Errore sconosciuto\n</string>
     <string name="ErroreToast">"Errore: "</string>
     <string name="ChiudiSottoscrizione">Chiudi sottoscrizione</string>
     <string name="ChiudendoSottoscrizione">Vuoi chiudere questa sottoscrizione?</string>
-    <string name="CencellazioneSottoscrizioneInCorso">Chiusura sottoscrizione in corso...</string>
+    <string name="CencellazioneSottoscrizioneInCorso">Chiusura sottoscrizione in corso…</string>
     <string name="EliminationeSottoscrizioneFallita">Non è stato possibile eliminare la sottoscrizione \n</string>
     <string name="Ultime">"Ultime "</string>
     <string name="letture">" letture"</string>
@@ -68,7 +68,16 @@
     <string name="sottoscrizioniscadute">Alcune sottoscrizioni sono scadute</string>
     <string name="sottoscrizionescaduta">La sottoscrizione è scaduta</string>
     <string name="protocollononsupportato">L\'unico protocollo di trasporto supportato in questo momento è il TCP.\nScegli degli endpoint opc.tcp</string>
-    <string name="infoMessage">Questa applicazione in versione demo è stata sviluppata per mostrare le potenzialità dello standard OPC UA. Si tratta di uno standard di rilievo in quanto è stato incluso nei principali modelli di riferimento architetturali industriali come RAMI 4.0 e (IIRA) IIoT.\n\nSviluppato da due studenti dell\'Università degli Studi di Catania (Italy) per il corso di Informatica Industriale.\n\nPer qualsiasi informazioni è possibile contattare gli sviluppatori ai seguenti indirizzi e-mail:\ntwistedfatedeveloper@gmail.com\ntwistedappdeveloper@gmail.com</string>
+    <string name="infoMessage">
+        Questa applicazione in versione demo è stata sviluppata per mostrare le potenzialità dello standard OPC UA.
+        \nEssa fa uso dello stack Java ufficiale fornito dalla OPC Foundation al seguente url:
+        https://github.com/OPCFoundation/UA-Java-Legacy, tale stack è oggi non più supportato quindi l\'applicazione potrebbe smettere di funzionare nelle future release dello standard. Si segnale che l\'applicazione fa uso di un certificato self-signed e potrebbero quindi presertarsi problemi nella connessione a server che fanno uso di autenticazione Sign o Sign &amp; Encrypt.
+        \n\nL\'app è stata sviluppata da due studenti dell\'Università degli Studi di Catania (Italy) e il codice sorgente è disponibile sotto licenza GPL-3.0 al seguete url:
+        \nhttps://github.com/SimoneTinella/Android_OPCUA_Client
+        \n\nPer qualsiasi informazione è possibile contattare gli sviluppatori ai seguenti indirizzi e-mail:
+        \ntwistedfatedeveloper@gmail.com
+        \ntwistedappdeveloper@gmail.com
+    </string>
     <string name="ChiudiSessione">Chiudi sessione</string>
     <string name="value_type">Tipo valore:&#160;</string>
     <string name="long_press_info">Tieni premuto un elemento della lista per aprire il Menu delle azioni.</string>

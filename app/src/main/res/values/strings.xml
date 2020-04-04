@@ -70,12 +70,12 @@
     <string name="AggiornamentoAttivo">User interface update on</string>
     <string name="AggiornamentoInPausa">User interface update off</string>
     <string name="InserisciValoriValidi">Enter valid values</string>
-    <string name="LetturaInCorso">Reading in progress...</string>
+    <string name="LetturaInCorso">Reading in progress…</string>
     <string name="LetturaFallita">Reading not performed\n</string>
     <string name="CreazioneSottoscrizione">Subscription creation</string>
     <string name="SottoscrizioneFallita">The subscription could not be created\n</string>
     <string name="DeviRispettareVincolo">You must respect the constraint:</string>
-    <string name="WriteInCorso">Write operation in progress...</string>
+    <string name="WriteInCorso">Write operation in progress…</string>
     <string name="WriteFallita">Write operation failed\n</string>
     <string name="ValoriInviati">Values sent</string>
     <string name="ChiudiSessione">Close Session</string>
@@ -99,7 +99,15 @@
     <string name="termina_sessione">Close session</string>
     <string name="elimina_sottoscrizione">Delete subscription</string>
     <string name="info">Information</string>
-    <string name="infoMessage">This demo version was developed to show the potential of the OPC UA standard. Today, this standard is relevant because it has been included in the main reference models of industrial architecture such as RAMI 4.0 and IIoT.\n\nDeveloped by two students of the University of Catania (Italy) for the course of Industrial Informatics.\n\nFor whatever information it is possible to contact the developers to the followings addresses:\ntwistedfatedeveloper@gmail.com\ntwistedappdeveloper@gmail.com</string>
+    <string name="infoMessage">
+        This demo version application was developed to show the potential of the OPC UA standard.
+        \nThe app makes use of the official Java stack provided by the OPC Foundation at the following url:\nhttps://github.com/OPCFoundation/UA-Java-Legacy, this stack is no longer supported today so the application may stop working in future release of the standard. In addition, the application uses a self-signed certificate, therefore problems may arise in the connection to servers that use Sign or Sign &amp; Encrypt authentication.
+        \n\nThis mobile application was developed by two students of the University of Catania (Italy) and the source code is available under the GPL-3.0 license at the following url:
+        \nhttps://github.com/SimoneTinella/Android_OPCUA_Client
+        \n\nFor any information you can contact the developers at the following e-mail addresses:
+        \ntwistedfatedeveloper@gmail.com
+        \ntwistedappdeveloper@gmail.com
+    </string>
     <string name="nonsupportato">Not Supported</string>
     <string name="protocollononsupportato">The only transport protocol that can be used at the moment with this application is the tcp protocol.\nChoose a opc.tcp endpoint</string>
     <string name="sottoscrizioniscadute">Some subscriptions have expired</string>

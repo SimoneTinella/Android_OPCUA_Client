@@ -8,8 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,7 +19,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.opcfoundation.ua.application.Client;
 import org.opcfoundation.ua.builtintypes.StatusCode;
@@ -197,8 +202,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_info:
                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle(R.string.info);
-                alertDialog.setMessage(getString(R.string.infoMessage));
+                final SpannableString s =
+                        new SpannableString(getString(R.string.infoMessage));
+                Linkify.addLinks(s, Linkify.WEB_URLS);
+                alertDialog.setTitle(String.format("%s %s", getString(R.string.info), BuildConfig.VERSION_NAME));
+                alertDialog.setMessage(s);
                 alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(android.R.string.ok),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
@@ -206,6 +214,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                 alertDialog.show();
+                TextView txtDialog = alertDialog.findViewById(android.R.id.message);
+                if (txtDialog != null) {
+                    txtDialog.setMovementMethod(LinkMovementMethod.getInstance());
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
