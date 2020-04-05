@@ -71,7 +71,7 @@
     <string name="infoMessage">
         Questa applicazione in versione demo è stata sviluppata per mostrare le potenzialità dello standard OPC UA.
         \nEssa fa uso dello stack Java ufficiale fornito dalla OPC Foundation al seguente url:
-        https://github.com/OPCFoundation/UA-Java-Legacy, tale stack è oggi non più supportato quindi l\'applicazione potrebbe smettere di funzionare nelle future release dello standard. Si segnale che l\'applicazione fa uso di un certificato self-signed e potrebbero quindi presertarsi problemi nella connessione a server che fanno uso di autenticazione Sign o Sign &amp; Encrypt.
+        https://github.com/OPCFoundation/UA-Java-Legacy, tale stack oggi non più supportato quindi l\'applicazione potrebbe smettere di funzionare nelle future release dello standard. Si segnala che l\'applicazione fa uso di un certificato self-signed, potrebbero quindi presertarsi problemi nella connessione a server che fanno uso di autenticazione Sign o Sign &amp; Encrypt.
         \n\nL\'app è stata sviluppata da due studenti dell\'Università degli Studi di Catania (Italy) e il codice sorgente è disponibile sotto licenza GPL-3.0 al seguete url:
         \nhttps://github.com/SimoneTinella/Android_OPCUA_Client
         \n\nPer qualsiasi informazione è possibile contattare gli sviluppatori ai seguenti indirizzi e-mail:
