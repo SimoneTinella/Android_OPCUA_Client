@@ -6,8 +6,8 @@ android {
         applicationId "org.twistedappdeveloper.opcclient"
         minSdkVersion 17
         targetSdkVersion 29
-        versionCode 15
-        versionName "1.0.8.2"
+        versionCode 16
+        versionName "1.0.8.3"
         multiDexEnabled true
     }
     buildTypes {
@@ -44,9 +44,7 @@ dependencies {
     implementation group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.13'
 
     implementation group: 'commons-codec', name: 'commons-codec', version: '20041127.091804'
-    implementation files('libs/commons-logging-1.2.jar')
 
-    implementation files('libs/httpclient-4.5.6.jar')
     implementation files('libs/opc-ua-stack-1.4.1.1-SNAPSHOT.jar')
     implementation files('libs/opc-ua-stack-1.4.1.1-SNAPSHOT-sources.jar')
 
