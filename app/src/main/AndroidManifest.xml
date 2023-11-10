@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.twistedappdeveloper.opcclient">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,7 +14,8 @@
         tools:ignore="LockedOrientationActivity">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="userPortrait">
+            android:screenOrientation="userPortrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
